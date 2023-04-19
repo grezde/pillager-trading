@@ -1,0 +1,13 @@
+{
+  "item.pillagertrading.illager_manuscript": "Illager Manuscript",
+  "gui.pillagertrading.manuscript_title": "Pillager Trading",
+  "item.pillagertrading.illager_order": "Illager Order",
+  "gui.pillagertrading.order_give": "Give: ",
+  "gui.pillagertrading.order_receive": "Receive: ",
+  "sounds.pillagertrading.pillager_decline": "Pillager declines",
+  "sounds.pillagertrading.pillager_trade": "Pillager cackles",
+  "item.pillagertrading.emerald_core": "Emerald Jewel",
+  "item.pillagertrading.lapis_core": "Lapis Lazuli Jewle",
+  "block.pillagertrading.gilded_stone_bricks": "Gilded Stone Bricks",
+  "block.pillagertrading.gilded_deepslate_bricks": "Gilded Deepslate Bricks"
+}

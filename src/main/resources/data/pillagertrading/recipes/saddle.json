@@ -1,0 +1,11 @@
+{
+  "type": "pillagertrading:pillager_trading",
+  "input": {
+    "item": "minecraft:saddle",
+    "count": 1
+  },
+  "output": {
+    "item": "minecraft:emerald",
+    "count": 5
+  }
+}

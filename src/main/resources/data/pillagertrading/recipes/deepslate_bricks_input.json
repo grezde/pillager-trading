@@ -1,0 +1,11 @@
+{
+  "type": "pillagertrading:pillager_trading",
+  "input": {
+    "item": "minecraft:deepslate_bricks",
+    "count": 64
+  },
+  "output": {
+    "item": "minecraft:emerald",
+    "count": 6
+  }
+}

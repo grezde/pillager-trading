@@ -1,0 +1,11 @@
+{
+  "type": "pillagertrading:pillager_trading",
+  "input": {
+    "item": "minecraft:emerald",
+    "count": 50
+  },
+  "output": {
+    "item": "minecraft:tall_grass",
+    "count": 4
+  }
+}

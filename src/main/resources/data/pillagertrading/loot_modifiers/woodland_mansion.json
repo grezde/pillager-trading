@@ -1,0 +1,12 @@
+{
+  "type": "pillagertrading:add_doubling_item",
+  "conditions": [
+      {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/woodland_mansion"
+      }
+  ],
+  "item": "pillagertrading:illager_manuscript",
+  "chance": 0.8,
+  "doublingChance": 0.5
+}

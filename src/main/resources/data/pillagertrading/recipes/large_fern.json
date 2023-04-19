@@ -1,0 +1,11 @@
+{
+  "type": "pillagertrading:pillager_trading",
+  "input": {
+    "item": "minecraft:emerald",
+    "count": 40
+  },
+  "output": {
+    "item": "minecraft:large_fern",
+    "count": 3
+  }
+}

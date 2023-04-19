@@ -1,0 +1,11 @@
+{
+  "type": "pillagertrading:pillager_trading",
+  "input": {
+    "item": "minecraft:clay",
+    "count": 1
+  },
+  "output": {
+    "item": "minecraft:clay_ball",
+    "count": 3
+  }
+}

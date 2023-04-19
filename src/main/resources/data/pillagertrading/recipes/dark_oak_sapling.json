@@ -1,0 +1,11 @@
+{
+  "type": "pillagertrading:pillager_trading",
+  "input": {
+    "item": "minecraft:emerald",
+    "count": 15
+  },
+  "output": {
+    "item": "minecraft:dark_oak_sapling",
+    "count": 4
+  }
+}

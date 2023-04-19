@@ -1,0 +1,11 @@
+{
+  "type": "pillagertrading:pillager_trading",
+  "input": {
+    "item": "minecraft:emerald_block",
+    "count": 4
+  },
+  "output": {
+    "item": "minecraft:infested_stone_bricks",
+    "count": 1
+  }
+}
