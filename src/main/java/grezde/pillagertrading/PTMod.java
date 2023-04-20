@@ -1,6 +1,7 @@
 package grezde.pillagertrading;
 
 import com.mojang.logging.LogUtils;
+import grezde.pillagertrading.blocks.PTBlockEntities;
 import grezde.pillagertrading.blocks.PTBlocks;
 import grezde.pillagertrading.client.gui.IllagerManuscriptScreen;
 import grezde.pillagertrading.entity.PillagerEvents;
@@ -41,7 +42,7 @@ import java.util.Optional;
 public class PTMod
 {
     public static final String MODID = "pillagertrading";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public PTMod()
     {
@@ -55,6 +56,7 @@ public class PTMod
         PTRecipes.register(modEventBus);
         PTLootModifiers.register(modEventBus);
         PTSounds.register(modEventBus);;
+        PTBlockEntities.register(modEventBus);
 
         modEventBus.register(PillagerEvents.ModBusEvents.class);
 

@@ -3,7 +3,6 @@ package grezde.pillagertrading.blocks;
 import grezde.pillagertrading.PTMod;
 import grezde.pillagertrading.items.PTItems;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -21,7 +20,7 @@ public class PTBlocks {
 
     public static final RegistryObject<Block> GILDED_STONE_BRICKS = registerSimpleBlock("gilded_stone_bricks", Blocks.STONE_BRICKS);
     public static final RegistryObject<Block> GILDED_DEEPSLATE_BRICKS = registerSimpleBlock("gilded_deepslate_bricks", Blocks.DEEPSLATE_BRICKS);
-    public static final RegistryObject<Block> WARDING_STATUE_BLOCK = registerBlock("warding_statue", () -> new WardinStatueBlock(BlockBehaviour.Properties.copy(Blocks.CUT_COPPER_SLAB).noOcclusion()));
+    public static final RegistryObject<Block> WARDING_STATUE_BLOCK = registerBlock("warding_statue", () -> new WardingStatueBlock(BlockBehaviour.Properties.copy(Blocks.CUT_COPPER_SLAB).noOcclusion()));
 
 
     private static RegistryObject<Block> registerBlock(String name, Supplier<? extends Block> supplier) {
