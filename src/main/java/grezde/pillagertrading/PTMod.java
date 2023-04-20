@@ -2,8 +2,10 @@ package grezde.pillagertrading;
 
 import com.mojang.logging.LogUtils;
 import grezde.pillagertrading.blocks.PTBlocks;
+import grezde.pillagertrading.client.gui.IllagerManuscriptScreen;
 import grezde.pillagertrading.entity.PillagerEvents;
 import grezde.pillagertrading.entity.PillagerTradeGoal;
+import grezde.pillagertrading.items.IllagerManuscriptItem;
 import grezde.pillagertrading.items.PTItems;
 import grezde.pillagertrading.loot.PTLootModifiers;
 import grezde.pillagertrading.network.PTPackets;
@@ -39,7 +41,7 @@ import java.util.Optional;
 public class PTMod
 {
     public static final String MODID = "pillagertrading";
-    public static final Logger LOGGER = LogUtils.getLogger();
+    private static final Logger LOGGER = LogUtils.getLogger();
 
     public PTMod()
     {
@@ -48,9 +50,10 @@ public class PTMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        PTItems.register(modEventBus);
         PTBlocks.register(modEventBus);
+        PTItems.register(modEventBus);
         PTRecipes.register(modEventBus);
+        PTLootModifiers.register(modEventBus);
         PTSounds.register(modEventBus);;
 
         modEventBus.register(PillagerEvents.ModBusEvents.class);
@@ -68,16 +71,4 @@ public class PTMod
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            // TODO
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-        }
-    }
 }

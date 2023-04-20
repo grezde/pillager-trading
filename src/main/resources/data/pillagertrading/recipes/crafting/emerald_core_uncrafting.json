@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "pillagertrading:emerald_core"
+    }
+  ],
+  "result": {
+    "item": "minecraft:emerald",
+    "count": 12
+  }
+}

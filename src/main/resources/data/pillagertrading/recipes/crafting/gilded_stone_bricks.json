@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "O": {
+      "item": "minecraft:stone_bricks"
+    },
+    "C": {
+      "item": "pillagertrading:emerald_core"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "OCO",
+    "OOO"
+  ],
+  "result": {
+    "item": "pillagertrading:gilded_stone_bricks",
+    "count": 8
+  }
+}

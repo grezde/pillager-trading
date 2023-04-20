@@ -1,0 +1,16 @@
+{
+  "type": "pillagertrading:pillager_trading",
+  "input": {
+    "item": "minecraft:emerald_block",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "forge:false"
+    }
+  ],
+  "output": {
+    "item": "pillagertrading:emerald_core",
+    "count": 1
+  }
+}

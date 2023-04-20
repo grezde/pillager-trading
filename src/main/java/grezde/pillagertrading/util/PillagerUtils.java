@@ -31,10 +31,10 @@ public class PillagerUtils {
     }
 
     private static InteractionHand getOrderHand(Player player) {
-        if(player.getItemInHand(InteractionHand.MAIN_HAND).is(PTItems.ILLAGER_ORDER.get()))
-            return InteractionHand.MAIN_HAND;
-        else
+        if(player.getItemInHand(InteractionHand.OFF_HAND).is(PTItems.ILLAGER_ORDER.get()))
             return InteractionHand.OFF_HAND;
+        else
+            return InteractionHand.MAIN_HAND;
     }
 
     private static InteractionHand getPriceHand(Player player) {
@@ -70,23 +70,7 @@ public class PillagerUtils {
         return ptr.getInput().getCount() <= input.getCount() && shouldPillagerDisplay(ptr, input);
     }
 
-    public static boolean playerGive(Player p, ItemStack stack) {
-        // copied from the give command
-        ServerPlayer player = (ServerPlayer) p;
-        boolean flag = p.getInventory().add(stack);
-        if (flag && stack.isEmpty()) {
-            player.level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, ((player.getRandom().nextFloat() - player.getRandom().nextFloat()) * 0.7F + 1.0F) * 2.0F);
-            player.containerMenu.broadcastChanges();
-            return true;
-        }
-        ItemEntity itementity = player.drop(stack, false);
-        if (itementity != null)
-            itementity.setOwner(player.getUUID());
-        return false;
-    }
-
     public static boolean shouldHaveTradeAI(Pillager pillager) {
-        PTMod.LOGGER.info("HAS ANGER CAPABILITY ");
         boolean Angree = hasCapability(pillager) ? !getCapability(pillager).belowAngerLimit() : false;
         return !Angree && pillager.getPersistentData().get("RaidId") == null;
     }

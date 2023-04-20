@@ -7,7 +7,12 @@
   "sounds.pillagertrading.pillager_decline": "Pillager declines",
   "sounds.pillagertrading.pillager_trade": "Pillager cackles",
   "item.pillagertrading.emerald_core": "Emerald Jewel",
-  "item.pillagertrading.lapis_core": "Lapis Lazuli Jewle",
+  "item.pillagertrading.lapis_core": "Lapis Lazuli Jewel",
   "block.pillagertrading.gilded_stone_bricks": "Gilded Stone Bricks",
-  "block.pillagertrading.gilded_deepslate_bricks": "Gilded Deepslate Bricks"
+  "block.pillagertrading.gilded_deepslate_bricks": "Gilded Deepslate Bricks",
+  "block.pillagertrading.warding_statue": "Warding Statue",
+  "gui.pillagertrading.statue.wanderer_on": "Allowing Wandering Traders",
+  "gui.pillagertrading.statue.wanderer_off": "Stopping Wandering Traders",
+  "gui.pillagertrading.statue.patrol_on": "Allowing Patrols",
+  "gui.pillagertrading.statue.patrol_off": "Stopping Patrols"
 }

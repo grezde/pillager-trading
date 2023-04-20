@@ -39,6 +39,7 @@ public class PillagerTradeGoal extends Goal {
 
     public PillagerTradeGoal(Pillager mob) {
         super();
+        this.canTrade = false;
         this.pillager = mob;
         this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK, Goal.Flag.TARGET));
     }
@@ -52,10 +53,7 @@ public class PillagerTradeGoal extends Goal {
 
     @Override
     public void tick() {
-        /*if(!PillagerUtils.shouldHaveTradeAI(pillager)) {
-            PillagerUtils.destroyTradeAI(pillager);
-            return;
-        }*/
+
         // general mob ai
         if(pillager.distanceToSqr(tradePlayer) < STOP_DISTANCE*STOP_DISTANCE)
             pillager.getNavigation().stop();
@@ -66,16 +64,21 @@ public class PillagerTradeGoal extends Goal {
             pillager.setTarget(null);
 
         ItemStack theItem = PillagerUtils.getPrice(tradePlayer);
-        PillagerTradingRecipe recipe = PillagerUtils.getRecipe(tradePlayer);
-        boolean itemShouldDisplay = PillagerUtils.shouldPillagerDisplay(recipe, theItem);
-        boolean itemShouldTrade = PillagerUtils.shouldPillagerTrade(recipe, theItem);
-        boolean cooldownShouldTrade = cooldown.canTrade();
-        if(itemShouldDisplay && cooldownShouldTrade)
-            pillager.setItemInHand(InteractionHand.OFF_HAND, recipe.getResultItem());
-        else
-            pillager.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
-        if(itemShouldTrade && cooldownShouldTrade) {
-            canTrade = true;
+        try {
+            PillagerTradingRecipe recipe = PillagerUtils.getRecipe(tradePlayer);
+            boolean itemShouldDisplay = PillagerUtils.shouldPillagerDisplay(recipe, theItem);
+            boolean itemShouldTrade = PillagerUtils.shouldPillagerTrade(recipe, theItem);
+            boolean cooldownShouldTrade = cooldown.canTrade();
+            if (itemShouldDisplay && cooldownShouldTrade)
+                pillager.setItemInHand(InteractionHand.OFF_HAND, recipe.getResultItem());
+            else
+                pillager.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
+            if (itemShouldTrade && cooldownShouldTrade) {
+                canTrade = true;
+            }
+        }
+        catch (Exception e) {
+            canTrade = false;
         }
 
     }

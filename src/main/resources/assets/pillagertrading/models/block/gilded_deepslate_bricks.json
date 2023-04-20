@@ -1,6 +1,7 @@
 {
-  "parent": "block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "pillagertrading:block/gilded_deepslate_bricks"
+    "end": "minecraft:block/deepslate_bricks",
+    "side": "pillagertrading:block/gilded_deepslate_bricks"
   }
 }

@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,active=false,rightarm=false,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_001"
+    },
+    "facing=north,active=false,rightarm=false,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_001",
+      "y": 270
+    },
+    "facing=south,active=false,rightarm=false,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_001",
+      "y": 90
+    },
+    "facing=west,active=false,rightarm=false,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_001",
+      "y": 180
+    },
+    "facing=east,active=false,rightarm=false,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_000"
+    },
+    "facing=north,active=false,rightarm=false,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_000",
+      "y": 270
+    },
+    "facing=south,active=false,rightarm=false,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_000",
+      "y": 90
+    },
+    "facing=west,active=false,rightarm=false,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_000",
+      "y": 180
+    },
+    "facing=east,active=false,rightarm=true,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_010"
+    },
+    "facing=north,active=false,rightarm=true,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_010",
+      "y": 270
+    },
+    "facing=south,active=false,rightarm=true,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_010",
+      "y": 90
+    },
+    "facing=west,active=false,rightarm=true,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_010",
+      "y": 180
+    },
+    "facing=east,active=false,rightarm=true,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_011"
+    },
+    "facing=north,active=false,rightarm=true,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_011",
+      "y": 270
+    },
+    "facing=south,active=false,rightarm=true,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_011",
+      "y": 90
+    },
+    "facing=west,active=false,rightarm=true,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_011",
+      "y": 180
+    },
+    "facing=east,active=true,rightarm=false,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_101"
+    },
+    "facing=north,active=true,rightarm=false,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_101",
+      "y": 270
+    },
+    "facing=south,active=true,rightarm=false,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_101",
+      "y": 90
+    },
+    "facing=west,active=true,rightarm=false,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_101",
+      "y": 180
+    },
+    "facing=east,active=true,rightarm=false,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_100"
+    },
+    "facing=north,active=true,rightarm=false,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_100",
+      "y": 270
+    },
+    "facing=south,active=true,rightarm=false,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_100",
+      "y": 90
+    },
+    "facing=west,active=true,rightarm=false,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_100",
+      "y": 180
+    },
+    "facing=east,active=true,rightarm=true,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_110"
+    },
+    "facing=north,active=true,rightarm=true,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_110",
+      "y": 270
+    },
+    "facing=south,active=true,rightarm=true,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_110",
+      "y": 90
+    },
+    "facing=west,active=true,rightarm=true,leftarm=false": {
+      "model": "pillagertrading:block/warding_statue_110",
+      "y": 180
+    },
+    "facing=east,active=true,rightarm=true,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_111"
+    },
+    "facing=north,active=true,rightarm=true,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_111",
+      "y": 270
+    },
+    "facing=south,active=true,rightarm=true,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_111",
+      "y": 90
+    },
+    "facing=west,active=true,rightarm=true,leftarm=true": {
+      "model": "pillagertrading:block/warding_statue_111",
+      "y": 180
+    }
+  }
+}

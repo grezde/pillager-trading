@@ -1,0 +1,126 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"missing": "minecraft:block/deepslate_tiles"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 9],
+			"to": [8, 2, 11],
+			"color": 3,
+			"faces": {
+				"north": {"uv": [0, 0, 5, 2], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"south": {"uv": [0, 0, 5, 2], "texture": "#missing"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"up": {"uv": [0, 0, 5, 2], "texture": "#missing"},
+				"down": {"uv": [0, 0, 5, 2], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [3, 0, 5],
+			"to": [8, 2, 7],
+			"color": 3,
+			"faces": {
+				"north": {"uv": [0, 0, 5, 2], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"south": {"uv": [0, 0, 5, 2], "texture": "#missing"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"up": {"uv": [0, 0, 5, 2], "texture": "#missing"},
+				"down": {"uv": [0, 0, 5, 2], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [3, 2, 5],
+			"to": [5, 6, 7],
+			"color": 9,
+			"faces": {
+				"north": {"uv": [0, 0, 2, 4], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 4], "texture": "#missing"},
+				"south": {"uv": [0, 0, 2, 4], "texture": "#missing"},
+				"west": {"uv": [0, 0, 2, 4], "texture": "#missing"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [3, 2, 9],
+			"to": [5, 6, 11],
+			"color": 9,
+			"faces": {
+				"north": {"uv": [0, 0, 2, 4], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 4], "texture": "#missing"},
+				"south": {"uv": [0, 0, 2, 4], "texture": "#missing"},
+				"west": {"uv": [0, 0, 2, 4], "texture": "#missing"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [2, 6, 3],
+			"to": [6, 16, 13],
+			"color": 7,
+			"faces": {
+				"north": {"uv": [0, 0, 4, 10], "texture": "#missing"},
+				"east": {"uv": [0, 0, 10, 10], "texture": "#missing"},
+				"south": {"uv": [0, 0, 4, 10], "texture": "#missing"},
+				"west": {"uv": [0, 0, 10, 10], "texture": "#missing"},
+				"up": {"uv": [0, 0, 4, 10], "texture": "#missing"},
+				"down": {"uv": [0, 0, 4, 10], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [0, 16, 4],
+			"to": [9, 20, 12],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 9, 4], "texture": "#missing"},
+				"east": {"uv": [0, 0, 8, 4], "texture": "#missing"},
+				"south": {"uv": [0, 0, 9, 4], "texture": "#missing"},
+				"west": {"uv": [0, 0, 8, 4], "texture": "#missing"},
+				"up": {"uv": [0, 0, 9, 8], "texture": "#missing"},
+				"down": {"uv": [0, 0, 9, 8], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [3, 3, 1],
+			"to": [5, 14, 3],
+			"color": 5,
+			"faces": {
+				"north": {"uv": [0, 0, 2, 11], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 11], "texture": "#missing"},
+				"south": {"uv": [0, 0, 2, 11], "texture": "#missing"},
+				"west": {"uv": [0, 0, 2, 11], "texture": "#missing"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [3, 3, 13],
+			"to": [5, 14, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 9, 0]},
+			"color": 5,
+			"faces": {
+				"north": {"uv": [0, 0, 2, 11], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 11], "texture": "#missing"},
+				"south": {"uv": [0, 0, 2, 11], "texture": "#missing"},
+				"west": {"uv": [0, 0, 2, 11], "texture": "#missing"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [6, 8, 5],
+			"to": [7, 14, 11],
+			"color": 1,
+			"faces": {
+				"north": {"uv": [0, 0, 1, 6], "texture": "#missing"},
+				"east": {"uv": [0, 0, 6, 6], "texture": "#missing"},
+				"south": {"uv": [0, 0, 1, 6], "texture": "#missing"},
+				"west": {"uv": [0, 0, 6, 6], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1, 6], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 6], "texture": "#missing"}
+			}
+		}
+	]
+}

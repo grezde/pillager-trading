@@ -20,7 +20,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 //apply plugin: 'pmd'
 
-version = '0.1'
+version = '0.2-1.19.2'
 group = 'grezde.pillagertrading' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'pillagertrading'
 

@@ -23,6 +23,13 @@ import java.util.Optional;
 
 public class IllagerOrderItem extends Item {
 
+    private static Component getNORecipe() {
+        MutableComponent a = Component.translatable("gui.pillagertrading.order_none").copy();
+        a.setStyle(a.getStyle().applyFormat(ChatFormatting.GRAY));
+        return a;
+    }
+    private static final Component NO_RECIPE = getNORecipe();
+
     public IllagerOrderItem(Properties p_41383_) {
         super(p_41383_);
     }
@@ -34,7 +41,7 @@ public class IllagerOrderItem extends Item {
 
     private MutableComponent genItemTooltip(ItemStack stack) {
         MutableComponent a;
-        if(stack.getItem().getMaxStackSize(stack) == 1)
+        if (stack.getItem().getMaxStackSize(stack) == 1)
             a = stack.getItem().getName(stack).copy();
         else {
             a = Component.literal(stack.getCount() + "x ");
@@ -46,18 +53,22 @@ public class IllagerOrderItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag tooltipFlag) {
-        PTMod.LOGGER.info("HELLO FROM FIRST TOOLTIP DISPLAY");
-        if(level == null)
+        if(level == null ||
+            stack.getTag() == null ||
+            stack.getTag().getString("recipe").isEmpty()
+        ) {
+            components.add(NO_RECIPE);
             return;
-        String s = stack.getTag().getString("recipe");
-        if(s == null)
+        }
+        ResourceLocation rl;
+        try {
+            rl = new ResourceLocation(stack.getTag().getString("recipe"));
+        } catch (Exception e) {
+            components.add(NO_RECIPE);
             return;
-        ResourceLocation rl = new ResourceLocation(s);
-        if(rl == null)
-            return;
+        }
         Optional<? extends Recipe<?>> r = level.getRecipeManager().byKey(rl);
         if(r.isPresent() && r.get() instanceof PillagerTradingRecipe ptr) {
-            PTMod.LOGGER.info("HELLO FROM SECOND TOOLTIP DISPLAY");
             MutableComponent give = Component.translatable("gui.pillagertrading.order_give");
             MutableComponent recieve = Component.translatable("gui.pillagertrading.order_receive");
             give.setStyle(give.getStyle().applyFormat(ChatFormatting.GRAY));
@@ -67,6 +78,8 @@ public class IllagerOrderItem extends Item {
             components.add(give);
             components.add(recieve);
         }
+        else
+            components.add(NO_RECIPE);
         super.appendHoverText(stack, level, components, tooltipFlag);
     }
 }
