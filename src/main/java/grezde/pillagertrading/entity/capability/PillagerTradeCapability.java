@@ -1,12 +1,11 @@
 package grezde.pillagertrading.entity.capability;
 
+import grezde.pillagertrading.util.PTConfig;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 
 public class PillagerTradeCapability {
 
-    private final int COOLDOWN = 1200; // 1 minute at normal tps
-    private final int HURT_COOLDOWN = 100; // 5 seconds
     private final int SOUND_COOLDOWN = 10;
     private int cooldownTicks;
     private int soundTicks;
@@ -31,10 +30,10 @@ public class PillagerTradeCapability {
         return cooldownTicks <= 0;
     }
 
-    public boolean belowAngerLimit() { return cooldownTicks <= COOLDOWN; }
+    public boolean belowAngerLimit() { return cooldownTicks <= PTConfig.TRADING_COOLDOWN.get(); }
 
     public void reset(int level) {
-        this.cooldownTicks = level == 1 ? COOLDOWN : (COOLDOWN+HURT_COOLDOWN);
+        this.cooldownTicks = level == 1 ? PTConfig.TRADING_COOLDOWN.get() : (PTConfig.TRADING_COOLDOWN.get()+10);
     }
 
     public boolean canPlaySound() {

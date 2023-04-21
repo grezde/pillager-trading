@@ -61,9 +61,7 @@ public class PillagerUtils {
     public static boolean shouldPillagerDisplay(PillagerTradingRecipe ptr, ItemStack input) {
         if(input.isEmpty())
             return false;
-        ItemStack copy = input.copy();
-        copy.setCount(ptr.getInput().getCount());
-        return copy.equals(ptr.getInput(), true);
+        return input.is(ptr.getInput().getItem());
     }
 
     public static boolean shouldPillagerTrade(PillagerTradingRecipe ptr, ItemStack input) {

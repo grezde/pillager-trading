@@ -12,6 +12,7 @@ import grezde.pillagertrading.loot.PTLootModifiers;
 import grezde.pillagertrading.network.PTPackets;
 import grezde.pillagertrading.recipe.PTRecipes;
 import grezde.pillagertrading.recipe.PillagerTradingRecipe;
+import grezde.pillagertrading.util.PTConfig;
 import grezde.pillagertrading.util.PTSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.protocol.game.ClientboundUpdateRecipesPacket;
@@ -29,10 +30,13 @@ import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 
 import java.util.Optional;
@@ -50,6 +54,9 @@ public class PTMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PTConfig.CONFIG);
+        PTConfig.load(PTConfig.CONFIG, FMLPaths.CONFIGDIR.get().resolve("pillagertrading-common.toml"));
 
         PTBlocks.register(modEventBus);
         PTItems.register(modEventBus);

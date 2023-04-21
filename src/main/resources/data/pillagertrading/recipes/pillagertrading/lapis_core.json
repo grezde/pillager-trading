@@ -1,16 +1,11 @@
 {
   "type": "pillagertrading:pillager_trading",
   "input": {
-    "item": "minecraft:emerald_block",
-    "count": 2
+    "item": "pillagertrading:emerald_core",
+    "count": 1
   },
-  "conditions": [
-    {
-      "type": "forge:false"
-    }
-  ],
   "output": {
     "item": "pillagertrading:lapis_core",
-    "count": 1
+    "count": 3
   }
 }

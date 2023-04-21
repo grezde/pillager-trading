@@ -2,6 +2,7 @@ package grezde.pillagertrading.blocks;
 
 import grezde.pillagertrading.PTMod;
 import grezde.pillagertrading.items.PTItems;
+import grezde.pillagertrading.util.PTConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -23,7 +24,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class WardingStatueBlockEntity extends BlockEntity {
 
-    private static final int COOLDOWN = 120; // 10 minutes = 12000 / 6 seconds = 120
     private int ticksLeft = -1;
 
     private ItemStackHandler itemStackHandler = new ItemStackHandler(1) {
@@ -90,7 +90,6 @@ public class WardingStatueBlockEntity extends BlockEntity {
             return;
         if(e.ticksLeft > 0)
             e.ticksLeft--;
-        PTMod.LOGGER.info("TICKS LEFT " +  e.ticksLeft);
         if(e.ticksLeft == 0) {
             BlockState bs = blockState.setValue(WardingStatueBlock.ACTIVE, false);
             level.setBlock(blockPos, bs, 3);
@@ -107,6 +106,6 @@ public class WardingStatueBlockEntity extends BlockEntity {
         BlockState bs = level.getBlockState(pos).setValue(WardingStatueBlock.ACTIVE, true);
         level.setBlock(pos, bs, 3);
         setBlockState(bs);
-        this.ticksLeft = COOLDOWN;
+        this.ticksLeft = PTConfig.STATUE_COOLDOWN.get();
     }
 }

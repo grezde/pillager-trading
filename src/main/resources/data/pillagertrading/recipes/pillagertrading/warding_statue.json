@@ -1,11 +1,11 @@
 {
   "type": "pillagertrading:pillager_trading",
   "input": {
-    "item": "minecraft:emerald_block",
+    "item": "pillagertrading:emerald_core",
     "count": 3
   },
   "output": {
-    "item": "pillagertrading:emerald_core",
+    "item": "pillagertrading:warding_statue",
     "count": 1
   }
 }

@@ -5,8 +5,10 @@ import grezde.pillagertrading.items.PTItems;
 import net.minecraft.commands.arguments.coordinates.Vec3Argument;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -68,20 +70,18 @@ public class WardingStatueBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(level.isClientSide) {
             if(player.getItemInHand(hand).isEmpty()) {
-                if(player.isCrouching())
-                    player.displayClientMessage(
-                            state.getValue(LEFT_ARM) ? Component.translatable("gui.pillagertrading.statue.patrol_off") : Component.translatable("gui.pillagertrading.statue.patrol_on"), true);
-                else
-                    player.displayClientMessage(state.getValue(RIGHT_ARM) ? Component.translatable("gui.pillagertrading.statue.wanderer_off") : Component.translatable("gui.pillagertrading.statue.wanderer_on"), true);
+                if(player.isCrouching()) {
+                    player.displayClientMessage(state.getValue(LEFT_ARM) ? Component.translatable("gui.pillagertrading.statue.patrol_on") : Component.translatable("gui.pillagertrading.statue.patrol_off"), true);
+                    player.playSound(SoundEvents.PILLAGER_AMBIENT);
+                }
+                else {
+                    player.displayClientMessage(state.getValue(RIGHT_ARM) ? Component.translatable("gui.pillagertrading.statue.wanderer_on") : Component.translatable("gui.pillagertrading.statue.wanderer_off"), true);
+                    player.playSound(SoundEvents.WANDERING_TRADER_AMBIENT);
+                }
             }
         }
         else if(level.getBlockEntity(pos) instanceof WardingStatueBlockEntity blockEntity && level instanceof ServerLevel sl) {
-            if(player.getItemInHand(hand).is(PTItems.EMERALD_CORE.get())) {
-                // FOR DEBUG PURPOSES
-                PTMod.LOGGER.info("Tried spawning wandering trader");
-                WanderingTrader trader = EntityType.WANDERING_TRADER.spawn(sl, null, null, null, pos.east(), MobSpawnType.EVENT, true, false);
-            }
-            else if(player.getItemInHand(hand).is(PTItems.LAPIS_CORE.get()) && !state.getValue(ACTIVE)) {
+            if(player.getItemInHand(hand).is(PTItems.LAPIS_CORE.get()) && !state.getValue(ACTIVE)) {
                 if(!player.getAbilities().instabuild)
                     player.getItemInHand(hand).shrink(1);
                 blockEntity.refuel(level, pos);

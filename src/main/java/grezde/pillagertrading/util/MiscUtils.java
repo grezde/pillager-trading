@@ -1,6 +1,7 @@
 package grezde.pillagertrading.util;
 
 import grezde.pillagertrading.items.PTItems;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -10,6 +11,15 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.chunk.ChunkAccess;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class MiscUtils {
 
@@ -37,5 +47,18 @@ public class MiscUtils {
     public static void villagerAddAI(Villager villager) {
         // TODO: add villagers scared of illager order
         villager.goalSelector.addGoal(2, new TemptGoal(villager, 0.6, Ingredient.of(PTItems.EMERALD_CORE.get()), false));
+    }
+
+    public static Stream<ChunkAccess> getChunksInRange(LevelAccessor level, BlockPos pos, int range) {
+        List<ChunkAccess> chunks = new ArrayList<>();
+        ChunkPos source = level.getChunk(pos).getPos();
+        for(int i=source.x - range; i<=source.x + range; i++)
+            for(int j=source.z - range; j <= source.z + range; j++)
+                chunks.add(level.getChunk(i, j));
+        return chunks.stream();
+    }
+
+    public static boolean containsBlockEntity(ChunkAccess chunk, Predicate<BlockEntity> condition) {
+        return chunk.getBlockEntitiesPos().stream().anyMatch(pos -> condition.test(chunk.getBlockEntity(pos)));
     }
 }
