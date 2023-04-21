@@ -6,6 +6,8 @@
   "gui.pillagertrading.order_receive": "Receive: ",
   "sounds.pillagertrading.pillager_decline": "Pillager declines",
   "sounds.pillagertrading.pillager_trade": "Pillager cackles",
+  "sounds.pillagertrading.statue_activate": "Warding statue activates",
+  "sounds.pillagertrading.statue_deactivate": "Warding statue deactivates",
   "item.pillagertrading.emerald_core": "Emerald Jewel",
   "item.pillagertrading.lapis_core": "Lapis Lazuli Jewel",
   "block.pillagertrading.gilded_stone_bricks": "Gilded Stone Bricks",

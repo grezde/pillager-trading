@@ -1,7 +1,7 @@
 {
   "type": "pillagertrading:pillager_trading",
   "input": {
-    "item": "minecraft:emerald",
+    "item": "minecraft:diamond",
     "count": 64
   },
   "output": {

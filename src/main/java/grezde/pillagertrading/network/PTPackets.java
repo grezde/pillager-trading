@@ -11,7 +11,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 public class PTPackets {
 
     private static SimpleChannel CHANNEL;
-    private static String VERSION = "0.2";
+    private static String VERSION = "0.3";
 
     private static int packetId = 0;
     private static int id() { return packetId++; }

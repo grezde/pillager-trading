@@ -15,5 +15,17 @@
       "minecraft:mob/pillager/idle2",
       "minecraft:mob/pillager/idle3"
     ]
+  },
+  "statue_activate": {
+    "subtitle": "sounds.pillagertrading.statue_activate",
+    "sounds": [
+      "minecraft:mob/ghast/fireball4"
+    ]
+  },
+  "statue_deactivate": {
+    "subtitle": "sounds.pillagertrading.statue_deactivate",
+    "sounds": [
+      "minecraft:random/fizz"
+    ]
   }
 }

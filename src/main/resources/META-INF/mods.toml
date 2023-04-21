@@ -19,7 +19,7 @@ modId="pillagertrading" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="0.2" #mandatory
+version="0.3" #mandatory
  # A display name for the mod
 displayName="Pillager Trading" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
@@ -46,6 +46,8 @@ description='''
 This mod allows you to trade with pillagers.
 
 Find Illager Manuscripts in Woodland Mansions and use their powers to trade with pillagers.
+
+You can also trade for a Warding Statue. Right click it to disable wandering traders and patrols. It needs Lapis Lazuli Jewels as fuel to work.
 
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.

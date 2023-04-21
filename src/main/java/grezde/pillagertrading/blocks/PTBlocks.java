@@ -3,6 +3,7 @@ package grezde.pillagertrading.blocks;
 import grezde.pillagertrading.PTMod;
 import grezde.pillagertrading.items.PTItems;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -25,7 +26,7 @@ public class PTBlocks {
 
     private static RegistryObject<Block> registerBlock(String name, Supplier<? extends Block> supplier) {
         RegistryObject<Block> block = BLOCKS.register(name, supplier);
-        PTItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        PTItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_REDSTONE)));
         return block;
     }
 

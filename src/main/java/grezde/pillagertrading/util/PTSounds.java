@@ -15,6 +15,8 @@ public class PTSounds {
 
     public static final RegistryObject<SoundEvent> PILLAGER_TRADE = registerSound("pillager_trade");
     public static final RegistryObject<SoundEvent> PILLAGER_DECLINE = registerSound("pillager_decline");
+    public static final RegistryObject<SoundEvent> STATUE_ACTIVATE = registerSound("statue_activate");
+    public static final RegistryObject<SoundEvent> STATUE_DEACTIVATE = registerSound("statue_deactivate");
 
     private static RegistryObject<SoundEvent> registerSound(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(PTMod.MODID, name)));

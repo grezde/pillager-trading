@@ -3,6 +3,7 @@ package grezde.pillagertrading.blocks;
 import grezde.pillagertrading.PTMod;
 import grezde.pillagertrading.items.PTItems;
 import grezde.pillagertrading.util.PTConfig;
+import grezde.pillagertrading.util.PTSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -91,6 +92,7 @@ public class WardingStatueBlockEntity extends BlockEntity {
         if(e.ticksLeft > 0)
             e.ticksLeft--;
         if(e.ticksLeft == 0) {
+            level.playSound((Player) null, blockPos, PTSounds.STATUE_DEACTIVATE.get(), SoundSource.BLOCKS, 1.0F,  1.0F);
             BlockState bs = blockState.setValue(WardingStatueBlock.ACTIVE, false);
             level.setBlock(blockPos, bs, 3);
             e.setBlockState(bs);
@@ -102,7 +104,7 @@ public class WardingStatueBlockEntity extends BlockEntity {
     }
 
     public void refuel(Level level, BlockPos pos) {
-        level.playSound((Player) null, pos, SoundEvents.IRON_GOLEM_REPAIR, SoundSource.PLAYERS, 0.2F,  2.0F);
+        level.playSound((Player) null, pos, PTSounds.STATUE_ACTIVATE.get(), SoundSource.BLOCKS, 1.0F,  1.0F);
         BlockState bs = level.getBlockState(pos).setValue(WardingStatueBlock.ACTIVE, true);
         level.setBlock(pos, bs, 3);
         setBlockState(bs);
